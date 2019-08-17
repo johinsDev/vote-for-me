@@ -8,13 +8,17 @@
     "react-scripts": "3.1.1"
   },
   "scripts": {
+    "commit": "git-cz",
+    "prebuild": "rimraf build",
     "build:css": "postcss build src/main.css -c  tailwind.js -o public/main.css",
     "precommit": "lint-staged",
+    "prepush": "npm run build",
     "start": "npm run build:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "npm run prebuild && npm run build:css && react-scripts build",
     "test": "react-scripts test",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "eject": "react-scripts eject",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && semantic-release post"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,json}": [
@@ -44,7 +48,10 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
     "@fullhuman/postcss-purgecss": "^1.2.0",
+    "@semantic-release/changelog": "^3.0.4",
     "@types/jest": "24.0.17",
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
@@ -53,6 +60,8 @@
     "@typescript-eslint/parser": "^2.0.0",
     "autoprefixer": "^9.6.1",
     "babel-eslint": "^10.0.2",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "3.0.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-react-app": "^5.0.1",
@@ -74,5 +83,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/johinsDev/vote-for-me.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

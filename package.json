@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "eject": "react-scripts eject",
-    "semantic-release": "semantic-release pre && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,json}": [

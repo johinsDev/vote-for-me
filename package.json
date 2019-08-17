@@ -74,6 +74,5 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/johinsDev/vote-for-me.git"
-  },
-  "homepage": "https://johinsdev.github.io/vote-for.me/"
+  }
 }

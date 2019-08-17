@@ -9,15 +9,16 @@
   },
   "scripts": {
     "commit": "git-cz",
+    "prebuild": "rimraf build",
     "build:css": "postcss build src/main.css -c  tailwind.js -o public/main.css",
     "precommit": "lint-staged",
     "prepush": "npm run build",
     "start": "npm run build:css && react-scripts start",
-    "build": "npm run build:css && react-scripts build",
+    "build": "npm run prebuild && npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "eject": "react-scripts eject",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release pre && semantic-release post"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,json}": [
@@ -50,6 +51,7 @@
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
     "@fullhuman/postcss-purgecss": "^1.2.0",
+    "@semantic-release/changelog": "^3.0.4",
     "@types/jest": "24.0.17",
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",

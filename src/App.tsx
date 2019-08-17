@@ -13,7 +13,7 @@ const App: React.FC = (): React.ReactElement => (
         target="_blank"
         rel="noopener noreferrer"
       >
-        Learn React
+        Learn Vote for me
       </a>
     </header>
   </div>

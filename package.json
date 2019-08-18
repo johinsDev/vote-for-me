@@ -10,7 +10,7 @@
   "scripts": {
     "commit": "git-cz",
     "prebuild": "rimraf build",
-    "build:css": "postcss build src/main.css -c  tailwind.js -o public/main.css",
+    "build:css": "postcss build src/main.css -c  tailwind.config.js -o public/main.css",
     "precommit": "lint-staged",
     "prepush": "npm run build",
     "start": "npm run prebuild && npm run build:css && react-scripts start",

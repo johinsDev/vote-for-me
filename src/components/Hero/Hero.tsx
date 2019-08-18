@@ -5,7 +5,7 @@ import Card from "../Card/Card";
 
 export default function Hero(): JSX.Element {
   return (
-    <div className="bg-cover bg-bottom hero">
+    <section className="bg-cover bg-bottom hero">
       <div className="mx-auto h-full relative b-inherit">
         <Nav />
 
@@ -24,6 +24,6 @@ export default function Hero(): JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

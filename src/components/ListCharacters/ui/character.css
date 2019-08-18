@@ -1,0 +1,17 @@
+.character {
+  min-height: 640px;
+}
+
+.gradient {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.61) 0%,
+    rgba(0, 0, 0, 0.61) 37%,
+    rgba(0, 0, 0, 0) 74%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.-left-3 {
+  left: -3rem;
+}

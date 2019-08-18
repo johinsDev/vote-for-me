@@ -27,10 +27,10 @@ export default function Card(): JSX.Element {
         </div>
       </div>
       <div className="h-16 flex absolute inset-x-0 bottom-0">
-        <div className="w-1/2 flex items-center justify-center bg-like">
+        <div className="w-1/2 flex items-center justify-center bg-like cursor-pointer">
           <i className="fas fa-thumbs-up text-4xl text-white"></i>
         </div>
-        <div className="w-1/2 flex items-center justify-center bg-unlike">
+        <div className="w-1/2 flex items-center justify-center bg-unlike cursor-pointer">
           <i className="fas fa-thumbs-down text-4xl text-white"></i>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function Card(): JSX.Element {
 
           <p className="my-8">
             <i className="fab fa-wikipedia-w mr-2"></i>
-            <a href="#" className="font-light text-sm underline">
+            <a href="/" className="font-light text-sm underline">
               More information
             </a>
           </p>

@@ -3,7 +3,7 @@ import "./card.css";
 
 export default function Card(): JSX.Element {
   return (
-    <div className="max-w-lg overflow-hidden card relative">
+    <article className="max-w-lg overflow-hidden card relative">
       <div className="blur center"></div>
 
       <div className="center overflow">
@@ -34,6 +34,6 @@ export default function Card(): JSX.Element {
           <i className="fas fa-thumbs-down text-4xl text-white"></i>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

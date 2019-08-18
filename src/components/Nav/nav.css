@@ -10,3 +10,18 @@
 .title {
   font-size: 2rem;
 }
+
+#menu-toggle:checked + #menu {
+  display: block;
+}
+
+.link {
+  border-bottom-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  transition: border-color 0.25s ease-out;
+}
+
+.link:hover {
+  border-color: white;
+}

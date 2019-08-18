@@ -38,10 +38,10 @@ export default function CharacterCard(): JSX.Element {
 
       <div className="absolute inset-x-0 bottom-0">
         {/* INFOR FOR VOTE */}
-        <div className="pl-12 pr-16 pb-12">
+        <div className="pl-12 pr-6 pb-4 lg:pb-12 xl:pr-12">
           <div className="relative">
             <VoteButton className="absolute bottom-0 -left-3" />
-            <p className="text-white font-normal text-5xl leading-none">
+            <p className="text-white font-normal text-2xl leading-none sm:text-3xl lg:text-4xl xl:text-5xl">
               Cristina Fernandéz de Kitcher
             </p>
           </div>

@@ -9,7 +9,7 @@ export default function Hero(): JSX.Element {
       <div className="mx-auto h-full relative b-inherit">
         <Nav />
 
-        <div className="px-32 my-12">
+        <div className="lg:px-32 px-8 my-12">
           <Card />
         </div>
 
@@ -17,7 +17,7 @@ export default function Hero(): JSX.Element {
           <div className="flex justify-end px-4 w-4/12 relative clonsing-ing items-center">
             <span>CLOSING ING</span>
           </div>
-          <div className="flex justify-start px-4 w-8/12 days">
+          <div className="flex justify-start items-center px-4 w-8/12 days text-2xl md:text-3xl">
             <span>
               <strong>22</strong> DAYS
             </span>

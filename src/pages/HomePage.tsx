@@ -10,7 +10,7 @@ export default function HomePage(): JSX.Element {
     <div className="h-full w-full">
       <Hero />
 
-      <div className="mx-auto px-32 py-8">
+      <div className="mx-auto lg:px-32 px-8 py-8">
         <Notification />
 
         <ListCharacters />

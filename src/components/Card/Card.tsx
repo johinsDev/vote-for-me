@@ -9,7 +9,9 @@ export default function Card(): JSX.Element {
       <div className="center overflow">
         <div className="p-8 content-box text-white">
           <p className="opacity-50">What’s your opinion on</p>
-          <h5 className="text-6xl leading-none">Pope Francis?</h5>
+          <h5 className="text-4xl md:text-5xl lg:text-6xl leading-none">
+            Pope Francis?
+          </h5>
           <p className="description font-light mt-8">
             He’s talking tough on clergy sexual abuse, but is he just another
             papal pervert protector? (thumbs down) or a true pedophile punishing

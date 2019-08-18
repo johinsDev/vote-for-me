@@ -15,3 +15,9 @@
 .-left-3 {
   left: -3rem;
 }
+
+@media (max-width: 760px) {
+  .character {
+    min-height: 540px;
+  }
+}

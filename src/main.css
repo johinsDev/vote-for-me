@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+.content-box {
+  box-sizing: content-box;
+}
+
+.b-inherit {
+  background: inherit;
+}

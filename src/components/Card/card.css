@@ -1,0 +1,29 @@
+.bg-like {
+  background-color: rgba(28, 187, 180, 0.8);
+}
+
+.bg-unlike {
+  background-color: rgba(255, 173, 29, 0.8);
+}
+
+.card {
+  min-height: 450px;
+}
+
+.blur {
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.center {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.description {
+  font-size: 21px;
+  line-height: 24px;
+}

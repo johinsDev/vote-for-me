@@ -13,7 +13,7 @@
     "build:css": "postcss build src/main.css -c  tailwind.js -o public/main.css",
     "precommit": "lint-staged",
     "prepush": "npm run build",
-    "start": "npm run build:css && react-scripts start",
+    "start": "npm run prebuild && npm run build:css && react-scripts start",
     "build": "npm run prebuild && npm run build:css && react-scripts build",
     "test": "react-scripts test",
     "commitmsg": "commitlint -e $GIT_PARAMS",

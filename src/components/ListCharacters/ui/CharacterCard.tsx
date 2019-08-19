@@ -1,35 +1,80 @@
 import * as React from "react";
+
 import "./character.css";
+import Percentage from "./Percentage";
+import { Ruling } from "../../../services/getRulings";
+import usePercentageVotes from "../../../uitls/usePercentageVotes";
+import VoteButton from "./VoteButton";
+import db from "../../../services/db";
 
-const img = "https://i.ibb.co/tzSftFH/Layer-13.png";
-
-function VoteButton({
-  like = true,
-  className = "",
+export default function CharacterCard({
+  ruling,
 }: {
-  like?: boolean;
-  className?: string;
+  ruling: Ruling;
 }): JSX.Element {
-  return (
-    <div
-      className={`${
-        like ? "bg-like" : "bg-unlike"
-      } ${className} h-8 w-8 flex items-center justify-center mr-4 border-2 cursor-pointer`}
-    >
-      <i
-        className={`${like ? "fa-thumbs-up" : "fa-thumbs-down"} fas text-white`}
-      ></i>
-    </div>
-  );
-}
+  const [$ruling, setRuling] = React.useState<Ruling>(ruling);
 
-export default function CharacterCard(): JSX.Element {
+  const [voteAgain, setVoteAgain] = React.useState<boolean>(false);
+
+  const [focus, setFocus] = React.useState<"down" | "up" | null>(null);
+
+  const { percentageDown, percentageUp } = usePercentageVotes({
+    totalDown: $ruling.votesDown,
+    totalUp: $ruling.votesUp,
+  });
+
+  const setDown = React.useCallback(() => {
+    if (focus === "down") {
+      setFocus(null);
+    } else {
+      setFocus("down");
+    }
+  }, [focus]);
+
+  const setUp = React.useCallback(() => {
+    if (focus === "up") {
+      setFocus(null);
+    } else {
+      setFocus("up");
+    }
+  }, [focus]);
+
+  const vote = React.useCallback(() => {
+    if (voteAgain) {
+      setVoteAgain(false);
+      setFocus(null);
+
+      return;
+    }
+
+    let votesDown = $ruling.votesDown;
+    let votesUp = $ruling.votesUp;
+
+    if (focus === "down") {
+      votesDown = votesDown + 1;
+    } else {
+      votesUp = votesUp + 1;
+    }
+
+    db.table("rulings")
+      .update($ruling.id, { votesUp, votesDown })
+      .then(() => {
+        setRuling({
+          ...$ruling,
+          votesDown,
+          votesUp,
+        });
+      });
+
+    setVoteAgain(true);
+  }, [$ruling, focus, voteAgain]);
+
   return (
     <article className="character bg-white border overflow-hidden relative">
       {/* BACKGROUND IMAGE */}
       <img
         className="absolute inset-0 h-full w-full object-cover"
-        src={img}
+        src={$ruling.image}
         alt="character"
       />
 
@@ -40,45 +85,52 @@ export default function CharacterCard(): JSX.Element {
         {/* INFOR FOR VOTE */}
         <div className="pl-12 pr-6 pb-4 lg:pb-12 xl:pr-12">
           <div className="relative">
-            <VoteButton className="absolute bottom-0 -left-3" />
+            <VoteButton
+              className="absolute bottom-0 -left-3"
+              like={percentageUp > percentageDown}
+            />
             <p className="text-white font-normal text-2xl leading-none sm:text-3xl lg:text-4xl xl:text-5xl">
-              Cristina Fernandéz de Kitcher
+              {$ruling.name}
             </p>
           </div>
 
           <p className="text-white text-xs leading-none my-2">
-            <strong>1 month ago</strong> in Entertaiment
+            <strong>{$ruling.timeIn}</strong> in {$ruling.category}
           </p>
 
           <p className="text-white font-light leading-none opacity-75 my-6">
-            Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean
-            eu velit libero.
+            {voteAgain ? "Thank for you voting!" : $ruling.description}
           </p>
 
-          <div className="flex items-center">
-            <VoteButton />
+          <div className="flex items-center h-8">
+            {!voteAgain && (
+              <>
+                <VoteButton onClick={setUp} focus={focus === "up"} />
 
-            <VoteButton like={false} />
+                <VoteButton
+                  like={false}
+                  onClick={setDown}
+                  focus={focus === "down"}
+                />
+              </>
+            )}
 
-            <button className="bg-transparent text-white  p-2 border text-sm">
-              Vote now
-            </button>
+            {(focus || voteAgain) && (
+              <button
+                className="bg-transparent text-white p-2 border text-sm focus:outline-none"
+                onClick={vote}
+              >
+                {voteAgain ? "Vote again" : "Vote now"}
+              </button>
+            )}
           </div>
         </div>
 
         {/* PERCENTAGE */}
-        <div className="h-12 flex">
-          <div className="w-3/5 flex items-center justify-start bg-like px-2">
-            <i className="fas fa-thumbs-up text-2xl text-white"></i>
-            <span className="text-white text-2xl ml-2 font-light">64%</span>
-          </div>
-          <div className="w-2/5 flex items-center justify-start bg-unlike px-2 opacity-75">
-            <i className="fas fa-thumbs-down text-2xl text-white "></i>
-            <span className="text-white text-2xl ml-2 font-light opacity-75">
-              36%
-            </span>
-          </div>
-        </div>
+        <Percentage
+          percentageDown={percentageDown}
+          percentageUp={percentageUp}
+        />
       </div>
     </article>
   );

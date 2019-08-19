@@ -1,0 +1,57 @@
+{
+  "data": {
+    "rulings": [
+      {
+        "id": 50,
+        "name": "Pope Francis",
+        "category": "Entertaiment",
+        "timeIn": "1 month ago",
+        "description": "He’s talking tough on clergy sexual abuse, but is he just another papal pervert protector? (thumbs down) or a true pedophile punishing pontiff? (thumbs up) ",
+        "votesUp": 0,
+        "votesDown": 0,
+        "image": "https://i.ibb.co/tzSftFH/Layer-13.png",
+        "isMain": true
+      },
+      {
+        "id": 1,
+        "name": "Kanye west",
+        "category": "Entertaiment",
+        "timeIn": "1 month ago",
+        "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+        "votesUp": 0,
+        "votesDown": 40,
+        "image": "https://i.ibb.co/tzSftFH/Layer-13.png"
+      },
+      {
+        "id": 2,
+        "name": "Mark zuckenberg",
+        "category": "Bussiness",
+        "timeIn": "1 month ago",
+        "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+        "votesUp": 40,
+        "votesDown": 0,
+        "image": "https://i.ibb.co/x2KcHjB/Mark.png"
+      },
+      {
+        "id": 3,
+        "name": "Cristina Fernández de Kirchner",
+        "category": "Politics",
+        "timeIn": "1 month ago",
+        "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+        "votesUp": 0,
+        "votesDown": 0,
+        "image": "https://i.ibb.co/Dtq7GYT/Layer-12.png"
+      },
+      {
+        "id": 4,
+        "name": "Malala Yousafzai",
+        "category": "Entertaiment",
+        "timeIn": "1 month ago",
+        "description": "Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.",
+        "votesUp": 0,
+        "votesDown": 0,
+        "image": "https://i.ibb.co/3Csbvsh/Layer-14.png"
+      }
+    ]
+  }
+}

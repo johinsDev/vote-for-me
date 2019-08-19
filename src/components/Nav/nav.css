@@ -11,6 +11,14 @@
   font-size: 2rem;
 }
 
+.opacity-90 {
+  opacity: 0.9;
+}
+
+.transition {
+  transition: background-color 0.25s ease-out;
+}
+
 #menu-toggle:checked + #menu {
   display: block;
 }
@@ -24,4 +32,10 @@
 
 .link:hover {
   border-color: white;
+}
+
+.button-register {
+  position: absolute;
+  bottom: 2rem;
+  left: calc(50% - 80px);
 }

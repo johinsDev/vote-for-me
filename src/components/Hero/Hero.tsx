@@ -9,7 +9,7 @@ export default function Hero(): JSX.Element {
       <div className="mx-auto h-full relative b-inherit">
         <Nav />
 
-        <div className="lg:px-32 px-8 my-12">
+        <div className="lg:px-32 px-8 container-card flex items-center justify-start">
           <Card />
         </div>
 

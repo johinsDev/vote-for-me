@@ -47,8 +47,8 @@ export default function CharacterCard({
       return;
     }
 
-    let votesDown = $ruling.votesDown;
-    let votesUp = $ruling.votesUp;
+    let votesDown = parseInt($ruling.votesDown, 10);
+    let votesUp = parseInt($ruling.votesUp, 10);
 
     if (focus === "down") {
       votesDown = votesDown + 1;
@@ -61,8 +61,8 @@ export default function CharacterCard({
       .then(() => {
         setRuling({
           ...$ruling,
-          votesDown,
-          votesUp,
+          votesDown: `${votesDown}`,
+          votesUp: `${votesUp}`,
         });
       });
 
@@ -117,6 +117,7 @@ export default function CharacterCard({
 
             {(focus || voteAgain) && (
               <button
+                data-testid="vote-now"
                 className="bg-transparent text-white p-2 border text-sm focus:outline-none"
                 onClick={vote}
               >

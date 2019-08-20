@@ -14,9 +14,10 @@ export default function VoteButton({
 }): JSX.Element {
   return (
     <div
+      data-testid={`${like ? "up" : "down"}-button`}
       onClick={onClick}
       className={`${like ? "bg-like" : "bg-unlike"} ${className} ${
-        focus ? "border-2" : ""
+        focus ? "border-2" : "no-focus"
       } h-8 w-8 flex items-center justify-center mr-4  cursor-pointer`}
     >
       <i

@@ -40,7 +40,7 @@ export default (): Data => {
 
   React.useEffect(() => {
     db.open().catch(function() {
-      alert("Open failed: ");
+      console.log("Open failed: ");
     });
 
     db.table("rulings")

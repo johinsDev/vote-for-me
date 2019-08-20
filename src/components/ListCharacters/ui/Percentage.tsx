@@ -12,6 +12,7 @@ export default function Percentage({
       {percentageDown !== "100" && (
         <div
           className="flex items-center justify-start bg-like px-2"
+          data-testid="percentage-up"
           style={{
             width: `${
               percentageUp === "0" && percentageDown === "0"
@@ -28,6 +29,7 @@ export default function Percentage({
       )}
       {percentageUp !== "100" && (
         <div
+          data-testid="percentage-down"
           className="flex items-center justify-start bg-unlike px-2 opacity-75"
           style={{
             width: `${

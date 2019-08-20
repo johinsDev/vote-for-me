@@ -1,0 +1,6 @@
+@media (max-width: 760px) {
+  .close-icon {
+    top: 1rem;
+    right: 1rem;
+  }
+}

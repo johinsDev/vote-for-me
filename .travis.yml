@@ -5,24 +5,18 @@ cache:
   directories:
     - node_modules
 script:
-  - npm test
+  - npm run ci:test
+  - npm run semantic-release
+
 env:
   - CI=true
 
 before_deploy:
   - npm install netlify-cli -g
-  - npm run build
 
 deploy:
   provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
+  script: npm run ci:deploy
   skip_cleanup: true
   on:
-    branch: layout
-
-deploy:
-  provider: script
-  script: netlify deploy -s $NETLIFY_SITE_ID -t $NETLIFY_ACCESS_TOKEN -p ./build
-  skip_cleanup: true
-  on:
-    branch: master
+    branch: interactive

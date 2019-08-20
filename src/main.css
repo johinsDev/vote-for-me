@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.content-box {
+  box-sizing: content-box;
+}
+
+.b-inherit {
+  background: inherit;
+}
+
+.text-like {
+  color: rgba(28, 187, 180, 0.8);
+}
+
+.border-like {
+  border-color: rgba(28, 187, 180, 0.8);
+}
+
+.bg-like {
+  background-color: rgba(28, 187, 180, 0.8);
+}
+
+.bg-unlike {
+  background-color: rgba(255, 173, 29, 0.8);
+}

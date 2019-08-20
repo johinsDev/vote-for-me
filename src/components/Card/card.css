@@ -1,0 +1,51 @@
+.card {
+  min-height: 450px;
+  min-width: 260px;
+}
+
+@media (max-width: 780px) {
+  .card {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .description {
+    font-size: 13px !important;
+  }
+}
+
+@media (max-height: 450px) {
+  .card {
+    min-height: 260px;
+  }
+
+  .description {
+    display: none;
+  }
+}
+
+.blur {
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.center {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+}
+
+.description {
+  text-align: justify;
+  font-size: 21px;
+  line-height: 24px;
+}

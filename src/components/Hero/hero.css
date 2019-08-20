@@ -1,0 +1,38 @@
+.hero {
+  background: url("https://firebasestorage.googleapis.com/v0/b/test-notifications-11bd4.appspot.com/o/francisco.png?alt=media&token=2695eb7c-ec50-4d99-80fa-686c52a4900a")
+    no-repeat center;
+  /* background-size: 100% 100%; */
+  background-size: cover;
+  height: 100%;
+  filter: brightness(0.9);
+}
+
+.clonsing-ing {
+  height: 50px;
+  color: white;
+  background: rgba(0, 0, 0, 0.21);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.days {
+  color: #464646;
+  font-weight: 300;
+  background: rgba(255, 255, 255, 0.51);
+}
+
+.clonsing-ing:after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-left: 8px solid rgba(0, 0, 0, 0.31);
+  border-bottom: 5px solid transparent;
+}
+
+.container-card {
+  height: calc(100% - 50px);
+}

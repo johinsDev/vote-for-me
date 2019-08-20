@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { useSpring, animated } from "react-spring";
 import "./character.css";
 import Percentage from "./Percentage";
 import { Ruling } from "../../../services/getRulings";
@@ -21,6 +21,16 @@ export default function CharacterCard({
   const { percentageDown, percentageUp } = usePercentageVotes({
     totalDown: $ruling.votesDown,
     totalUp: $ruling.votesUp,
+  });
+
+  const contentProps = useSpring({
+    opacity: voteAgain || focus ? 1 : 0,
+    marginBottom: voteAgain || focus ? 0 : -1000,
+  });
+
+  const voteProps = useSpring({
+    opacity: !voteAgain ? 1 : 0,
+    translateY: !voteAgain ? 0 : -1000,
   });
 
   const setDown = React.useCallback(() => {
@@ -104,7 +114,7 @@ export default function CharacterCard({
 
           <div className="flex items-center h-8">
             {!voteAgain && (
-              <>
+              <animated.div className="flex" style={voteProps}>
                 <VoteButton onClick={setUp} focus={focus === "up"} />
 
                 <VoteButton
@@ -112,17 +122,18 @@ export default function CharacterCard({
                   onClick={setDown}
                   focus={focus === "down"}
                 />
-              </>
+              </animated.div>
             )}
 
             {(focus || voteAgain) && (
-              <button
+              <animated.button
+                style={contentProps}
                 data-testid="vote-now"
                 className="bg-transparent text-white p-2 border text-sm focus:outline-none"
                 onClick={vote}
               >
                 {voteAgain ? "Vote again" : "Vote now"}
-              </button>
+              </animated.button>
             )}
           </div>
         </div>

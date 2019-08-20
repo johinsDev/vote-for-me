@@ -52,10 +52,9 @@ export default (): Data => {
               response.json().then(({ data }: Data) => {
                 db.table("rulings")
                   .bulkAdd(data.rulings)
-                  .then(() => {
-                    setdata({ data });
-                  })
+                  .then(() => {})
                   .catch(console.log);
+                setdata({ data });
               });
             }
           });
